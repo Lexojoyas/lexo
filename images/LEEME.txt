@@ -1,0 +1,15 @@
+Poné acá las fotos de tus productos.
+
+Cada producto en js/products.js tiene un campo "image" como:
+  "images/anillo-32.jpg"
+
+Para que la foto aparezca, subí un archivo a esta carpeta con
+exactamente ese nombre. Mientras no lo hagas, la tarjeta muestra
+automáticamente un ícono de la categoría, así que podés cargar
+todos los productos primero y agregar las fotos más adelante.
+
+Recomendaciones:
+- Formato JPG o PNG.
+- Fotos cuadradas o 4:3 se ven mejor en las tarjetas.
+- Peso liviano (idealmente menos de 300 KB por foto) para que la
+  página cargue rápido.
