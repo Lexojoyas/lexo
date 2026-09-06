@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lexo Joyas — Catálogo</title>
+  <meta name="description" content="Anillos, aros, cadenas y pulseras bañados en oro." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8E%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top">
+        <svg class="brand-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M6 9l6-5 6 5-6 10Z" />
+          <path d="M6 9h12" />
+        </svg>
+        <span class="brand-name">Lexo Joyas</span>
+      </a>
+      <p class="brand-tagline">Anillos, aros, cadenas y pulseras bañados en oro</p>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1>Joyas para brillar todos los días.</h1>
+      <p class="hero-copy">
+        Anillos, aros, cadenas y pulseras bañados en oro, pensados para el uso
+        diario a precios accesibles.
+      </p>
+    </div>
+  </section>
+
+  <section class="catalog-controls" aria-label="Buscar y filtrar productos">
+    <div class="controls-inner">
+      <div class="search-field">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.5-3.5" />
+        </svg>
+        <input type="search" id="search-input" placeholder="Buscar por nombre o aroma…" aria-label="Buscar productos" />
+      </div>
+      <div class="category-pills" id="category-pills" role="group" aria-label="Filtrar por categoría"></div>
+    </div>
+  </section>
+
+  <main>
+    <section aria-live="polite">
+      <div class="catalog-grid" id="catalog-grid"></div>
+      <p class="empty-state" id="empty-state" hidden>
+        No encontramos productos que coincidan con esa búsqueda. Probá con otra palabra o mirá todas las categorías.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">Lexo Joyas</p>
+        <p class="footer-location">Córdoba, Argentina</p>
+      </div>
+      <div class="footer-links">
+        <a class="footer-whatsapp" href="https://wa.me/5493511234567" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="footer-instagram" href="https://instagram.com/tuemprendimiento" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
