@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lexo Joyas — Catálogo</title>
+  <meta name="description" content="Anillos, cadenas y pulseras bañados en oro." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8E%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="images/logo.png" alt="Lexo Joyas" />
+      </a>
+      <div class="header-right">
+        <p class="brand-tagline">Anillos, cadenas y pulseras bañados en oro</p>
+        <button type="button" class="cart-button" id="cart-button" aria-label="Ver carrito">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="9" cy="20" r="1.4" />
+            <circle cx="18" cy="20" r="1.4" />
+            <path d="M2.5 3h2l2.2 11.4a2 2 0 0 0 2 1.6h8.3a2 2 0 0 0 2-1.6L21 7H6" />
+          </svg>
+          <span class="cart-count" id="cart-count" hidden>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="promo-banner" id="promo-banner"></div>
+
+  <section class="hero" id="top">
+    <div class="hero-money-bg" aria-hidden="true">
+      <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice">
+        <use href="#icon-moneybag" x="40" y="380" width="220" height="220" />
+        <use href="#icon-moneybag" x="880" y="60" width="180" height="180" />
+        <use href="#icon-bill" x="960" y="360" width="150" height="100" />
+        <use href="#icon-bill" x="60" y="80" width="130" height="90" />
+        <use href="#icon-coin" x="300" y="60" width="70" height="70" />
+        <use href="#icon-coin" x="1080" y="280" width="60" height="60" />
+        <use href="#icon-sparkle" x="520" y="40" width="46" height="46" />
+        <use href="#icon-sparkle" x="1000" y="180" width="36" height="36" />
+        <use href="#icon-sparkle" x="180" y="280" width="36" height="36" />
+      </svg>
+    </div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="hero-eyebrow"><span></span>Joyería bañada en oro 18k<span></span></p>
+      <h1>Armá tu combo ideal y <span class="hero-highlight">ahorrá comprando de a más</span> de una joya.</h1>
+      <p class="hero-copy">
+        Cadenas, pulseras y anillos bañados en oro 18k, pensados para el uso
+        diario. Elegí tu combo o recorré el catálogo completo.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-hero btn-hero-primary" href="#combos">Ver combos</a>
+        <a class="btn-hero btn-hero-secondary" href="#catalogo">Catálogo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="combos-section" id="combos">
+    <div class="combos-inner">
+      <h2 class="combos-title">Combos con precio especial</h2>
+      <p class="combos-subtitle">Llevá más de una pieza y pagá menos que por separado.</p>
+      <div class="combos-grid" id="combos-grid"></div>
+    </div>
+  </section>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="icon-moneybag" viewBox="0 0 100 100">
+        <path d="M42 8h16M46 8l-6 10M54 8l6 10" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M32 26C20 40 14 52 14 64c0 17 16 28 36 28s36-11 36-28c0-12-6-24-18-38-4 6-10 9-18 9s-14-3-18-9Z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/>
+        <text x="50" y="76" font-family="Georgia, serif" font-size="34" font-weight="700" text-anchor="middle" fill="currentColor">$</text>
+      </symbol>
+      <symbol id="icon-bill" viewBox="0 0 100 60">
+        <rect x="4" y="4" width="92" height="52" rx="7" fill="none" stroke="currentColor" stroke-width="3.5"/>
+        <circle cx="50" cy="30" r="15" fill="none" stroke="currentColor" stroke-width="3"/>
+        <text x="50" y="38" font-family="Georgia, serif" font-size="17" font-weight="700" text-anchor="middle" fill="currentColor">$</text>
+        <path d="M14 14h8M78 14h8M14 46h8M78 46h8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="icon-coin" viewBox="0 0 70 70">
+        <circle cx="35" cy="35" r="30" fill="none" stroke="currentColor" stroke-width="4"/>
+        <circle cx="35" cy="35" r="22" fill="none" stroke="currentColor" stroke-width="2"/>
+        <text x="35" y="45" font-family="Georgia, serif" font-size="26" font-weight="700" text-anchor="middle" fill="currentColor">$</text>
+      </symbol>
+      <symbol id="icon-sparkle" viewBox="0 0 46 46">
+        <path d="M23 2l4 15 15 4-15 4-4 15-4-15L4 21l15-4Z" fill="currentColor"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <section class="catalog-controls" id="catalogo" aria-label="Buscar y filtrar productos">
+    <div class="controls-inner">
+      <div class="search-field">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.5-3.5" />
+        </svg>
+        <input type="search" id="search-input" placeholder="Buscar por nombre o categoría…" aria-label="Buscar productos" />
+      </div>
+      <div class="category-pills" id="category-pills" role="group" aria-label="Filtrar por categoría"></div>
+    </div>
+  </section>
+
+  <main>
+    <section aria-live="polite">
+      <div class="catalog-grid" id="catalog-grid"></div>
+      <p class="empty-state" id="empty-state" hidden>
+        No encontramos productos que coincidan con esa búsqueda. Probá con otra palabra o mirá todas las categorías.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">Lexo Joyas</p>
+        <p class="footer-location">Córdoba, Argentina</p>
+      </div>
+      <div class="footer-links">
+        <a class="footer-whatsapp" href="https://wa.me/5493516847182" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="footer-instagram" href="https://www.instagram.com/lexo.joyas/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox-overlay" id="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Cerrar imagen">✕</button>
+    <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Carrito de compras">
+    <div class="cart-drawer-header">
+      <h2>Tu carrito</h2>
+      <button type="button" class="cart-close" id="cart-close" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <p class="cart-empty" id="cart-empty">Todavía no agregaste productos.</p>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total</span>
+        <span id="cart-total">$0</span>
+      </div>
+      <a class="btn-cart-checkout" id="cart-checkout" href="#" target="_blank" rel="noopener">
+        Finalizar pedido por WhatsApp
+      </a>
+      <button type="button" class="btn-cart-clear" id="cart-clear">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
