@@ -6,10 +6,10 @@ const STORE_CONFIG = {
   name: "Lexo Joyas",
   tagline: "Anillos, cadenas y pulseras bañados en oro",
   heroTitle:
-    'Armá tu combo ideal y <span class="hero-highlight">ahorrá comprando de a más</span> de una joya.',
+    'Cadenas, pulseras y anillos que <span class="hero-highlight">brillan todos los días</span>.',
   heroCopy:
-    "Cadenas, pulseras y anillos bañados en oro 18k, pensados para el uso diario. Elegí tu combo o recorré el catálogo completo.",
-  promoBanner: "🎁 Los 3 combos vienen con un dije de regalo",
+    "Bañado en oro 18k: no mancha, no destiñe y aguanta el uso diario. Envíos a todo el país desde Córdoba, Argentina.",
+  promoBanner: "🎁 Todas las cadenas vienen con un dije de regalo",
 
   // Número de WhatsApp con código de país, SIN "+", espacios ni guiones.
   // Ejemplo Argentina (celular): 549 + código de área + número.
@@ -30,7 +30,7 @@ const COMBOS = [
     id: "combo-cadena-pulsera",
     name: "Combo Cadena + Pulsera",
     price: 48000,
-    items: ["1 cadena a elección", "1 pulsera a elección"],
+    items: ["1 cadena a elección", "1 pulsera a elección", "1 dije de regalo"],
   },
   {
     id: "combo-anillo-cadena-dije",
@@ -50,6 +50,7 @@ const COMBOS = [
       "1 pulsera a elección",
       "1 cadena a elección",
       "1 anillo niquelado",
+      "1 dije de regalo",
     ],
   },
 ];
