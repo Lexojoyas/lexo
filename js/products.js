@@ -4,10 +4,10 @@
 // ============================================================
 const STORE_CONFIG = {
   name: "Lexo Joyas",
-  tagline: "Anillos, cadenas y pulseras bañados en oro",
+  tagline: "Cadenas y pulseras bañadas en oro 18k",
   heroTitle: "Cadenas, pulseras y anillos que brillan todos los días.",
   heroCopy:
-    "Bañado en oro 18k: no mancha, no destiñe y aguanta el uso diario. Envíos a todo el país desde Córdoba, Argentina.",
+    "Cadenas y pulseras bañadas en oro 18k: no manchan, no destiñen y aguantan el uso diario. Envíos a todo el país desde Córdoba, Argentina.",
   promoBanner: "🎁 Todas las cadenas vienen con un dije de regalo",
   // Texto destacado de la sección "Dijes"
   dijesHeadline: "Elegí tu dije GRATIS con la compra de tu cadena 🎁",
@@ -111,12 +111,6 @@ const DIJES = [
     image: "images/dije-san-benito.jpg",
   },
   {
-    id: "dije-virgen",
-    name: "Virgen de Guadalupe",
-    type: "Dijes",
-    image: "images/dije-virgen.jpg",
-  },
-  {
     id: "dije-cruz-guadalupe",
     name: "Cruz Virgen de Guadalupe",
     type: "Dijes",
@@ -159,6 +153,12 @@ const DIJES = [
 //   category    categoría; los filtros de arriba se arman solos
 //               a partir de las categorías que uses acá
 //   price       precio en números, sin puntos ni el símbolo $
+//   oldPrice    (opcional) precio anterior: se muestra tachado al
+//               lado del precio actual. Borrá la línea para sacarlo.
+//   stock       (opcional) unidades que quedan. Con 1 muestra
+//               "Queda una sola", con 2 a 5 "Quedan X" y con 0
+//               "Sin stock" (no se puede agregar al carrito).
+//               Borrá la línea si no querés mostrar el stock.
 //   description texto corto, una oración alcanza
 //   image       ruta a la foto dentro de /images
 //               (si el archivo todavía no existe, se muestra
@@ -172,7 +172,7 @@ const PRODUCTS = [
     name: "Anillo 32",
     category: "Anillos",
     price: 32000,
-    description: "Anillo estilo 32, banda ancha.",
+    description: "Anillo estilo 32, banda ancha. Niquelado.",
     image: "images/anillo-32.jpg",
   },
   {
@@ -180,7 +180,7 @@ const PRODUCTS = [
     name: "Anillo articulado",
     category: "Anillos",
     price: 32000,
-    description: "Anillo de eslabones articulados.",
+    description: "Anillo de eslabones articulados, bañado en oro 18k.",
     image: "images/anillo-articulado.jpg",
   },
   {
@@ -188,7 +188,7 @@ const PRODUCTS = [
     name: "Anillos rolex",
     category: "Anillos",
     price: 32000,
-    description: "Anillo estilo Rolex.",
+    description: "Anillo estilo Rolex. Niquelado.",
     image: "images/anillos-rolex.jpg",
   },
   {
@@ -196,7 +196,7 @@ const PRODUCTS = [
     name: "Anillo Versace",
     category: "Anillos",
     price: 32000,
-    description: "Anillo estilo Versace.",
+    description: "Anillo estilo Versace. Niquelado.",
     image: "images/anillo-versace.jpg",
   },
   {
@@ -204,7 +204,7 @@ const PRODUCTS = [
     name: "Anillo Todo Pasa",
     category: "Anillos",
     price: 32000,
-    description: "Anillo con frase \"Todo pasa\".",
+    description: "Anillo con frase \"Todo pasa\". Niquelado.",
     image: "images/anillo-todo-pasa.jpg",
   },
   {
@@ -213,7 +213,7 @@ const PRODUCTS = [
     name: "Anillo Siempre Fue Dios",
     category: "Anillos",
     price: 32000,
-    description: "Anillo con frase \"Siempre fue Dios\".",
+    description: "Anillo con frase \"Siempre fue Dios\". Niquelado.",
     image: "images/anillo-siempre-fue-dios.jpg",
   },
 
@@ -223,6 +223,7 @@ const PRODUCTS = [
     name: "Caracol fina",
     category: "Cadenas",
     price: 35000,
+    oldPrice: 38000,
     description: "Cadena caracol, eslabón fino.",
     image: "images/caracol-fina.jpg",
   },
@@ -231,6 +232,7 @@ const PRODUCTS = [
     name: "Caracol gruesa",
     category: "Cadenas",
     price: 35000,
+    oldPrice: 38000,
     description: "Cadena caracol, eslabón grueso.",
     image: "images/caracol-gruesa.jpg",
   },
@@ -239,6 +241,7 @@ const PRODUCTS = [
     name: "Cubana gruesa",
     category: "Cadenas",
     price: 35000,
+    oldPrice: 38000,
     description: "Cadena cubana, eslabón grueso.",
     image: "images/cubana-gruesa.jpg",
   },
@@ -247,6 +250,7 @@ const PRODUCTS = [
     name: "Enrollada fina",
     category: "Cadenas",
     price: 35000,
+    oldPrice: 38000,
     description: "Cadena enrollada, eslabón fino.",
     image: "images/enrollada-fina.jpg",
   },
@@ -255,6 +259,7 @@ const PRODUCTS = [
     name: "Gourmet fina",
     category: "Cadenas",
     price: 35000,
+    oldPrice: 38000,
     description: "Cadena gourmet, eslabón fino.",
     image: "images/gourmet-fina.jpg",
   },
@@ -263,6 +268,7 @@ const PRODUCTS = [
     name: "Paris fina",
     category: "Cadenas",
     price: 35000,
+    oldPrice: 38000,
     description: "Cadena estilo París, fina.",
     image: "images/paris-fina.jpg",
   },
@@ -271,6 +277,8 @@ const PRODUCTS = [
     name: "Tourbillon fina",
     category: "Cadenas",
     price: 35000,
+    oldPrice: 38000,
+    stock: 1,
     description: "Cadena tourbillon, eslabón fino.",
     image: "images/tourbillon-fina.jpg",
   },
@@ -279,6 +287,7 @@ const PRODUCTS = [
     name: "Trenzada fina",
     category: "Cadenas",
     price: 35000,
+    oldPrice: 38000,
     description: "Cadena trenzada, eslabón fino.",
     image: "images/trenzada-fina.jpg",
   },
@@ -287,6 +296,7 @@ const PRODUCTS = [
     name: "Van cleef blanca",
     category: "Cadenas",
     price: 35000,
+    oldPrice: 38000,
     description: "Cadena estilo Van Cleef, blanca.",
     image: "images/van-cleef-blanca.jpg",
   },
@@ -295,6 +305,7 @@ const PRODUCTS = [
     name: "Van cleef dorada",
     category: "Cadenas",
     price: 35000,
+    oldPrice: 38000,
     description: "Cadena estilo Van Cleef, dorada.",
     image: "images/van-cleef-dorada.jpg",
   },
@@ -303,6 +314,7 @@ const PRODUCTS = [
     name: "Van cleef negra",
     category: "Cadenas",
     price: 35000,
+    oldPrice: 38000,
     description: "Cadena estilo Van Cleef, negra.",
     image: "images/van-cleef-negra.jpg",
   },
@@ -313,6 +325,7 @@ const PRODUCTS = [
     name: "Cadena fina militar",
     category: "Cadenas",
     price: 35000,
+    oldPrice: 38000,
     description: "Cadena militar, eslabón fino.",
     image: "images/cadena-fina-militar.jpg",
   },
@@ -323,6 +336,7 @@ const PRODUCTS = [
     name: "Pulsera cubana ajustable",
     category: "Pulseras",
     price: 19000,
+    oldPrice: 23000,
     description: "Pulsera cubana, talle ajustable.",
     image: "images/pulsera-cubana-ajustable.jpg",
   },
@@ -331,6 +345,7 @@ const PRODUCTS = [
     name: "Pulsera figaro",
     category: "Pulseras",
     price: 19000,
+    oldPrice: 23000,
     description: "Pulsera estilo Figaro.",
     image: "images/pulsera-figaro.jpg",
   },
@@ -339,6 +354,7 @@ const PRODUCTS = [
     name: "Pulsera gourmet",
     category: "Pulseras",
     price: 19000,
+    oldPrice: 23000,
     description: "Pulsera estilo gourmet.",
     image: "images/pulsera-gourmet.jpg",
   },
@@ -347,6 +363,7 @@ const PRODUCTS = [
     name: "Pulsera singapur",
     category: "Pulseras",
     price: 19000,
+    oldPrice: 23000,
     description: "Pulsera estilo singapur.",
     image: "images/pulsera-singapur.jpg",
   },
@@ -355,6 +372,7 @@ const PRODUCTS = [
     name: "Pulsera tourbillon",
     category: "Pulseras",
     price: 19000,
+    oldPrice: 23000,
     description: "Pulsera estilo tourbillon.",
     image: "images/pulsera-tourbillon.jpg",
   },
@@ -363,6 +381,7 @@ const PRODUCTS = [
     name: "Pulsera van cleef",
     category: "Pulseras",
     price: 19000,
+    oldPrice: 23000,
     description: "Pulsera estilo Van Cleef.",
     image: "images/pulsera-van-cleef.jpg",
   },
@@ -371,6 +390,7 @@ const PRODUCTS = [
     name: "Pulsera van cleef dorada",
     category: "Pulseras",
     price: 19000,
+    oldPrice: 23000,
     description: "Pulsera estilo Van Cleef, dorada.",
     image: "images/pulsera-van-cleef-dorada.jpg",
   },

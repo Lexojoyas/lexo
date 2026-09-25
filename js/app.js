@@ -521,6 +521,32 @@
     return inCategory && inQuery;
   }
 
+  // Stock: si el producto no tiene "stock", se considera ilimitado.
+  function hasStockLimit(product) {
+    return typeof product.stock === "number";
+  }
+
+  function isSoldOut(product) {
+    return hasStockLimit(product) && product.stock <= 0;
+  }
+
+  function stockNote(product) {
+    if (!hasStockLimit(product)) return "";
+    if (product.stock <= 0) return "Sin stock";
+    if (product.stock === 1) return "Queda una sola";
+    if (product.stock <= 5) return `Quedan ${product.stock}`;
+    return "";
+  }
+
+  function priceHtml(product) {
+    const hasOld = typeof product.oldPrice === "number" && product.oldPrice > product.price;
+    return `
+      <span class="card-price-row">
+        ${hasOld ? `<s class="card-price-old"><span class="visually-hidden">Antes </span>${formatPrice(product.oldPrice)}</s>` : ""}
+        <span class="card-price">${hasOld ? `<span class="visually-hidden">Ahora </span>` : ""}${formatPrice(product.price)}</span>
+      </span>`;
+  }
+
   function createCard(product, options = {}) {
     const card = document.createElement("article");
     card.className = "card";
@@ -537,11 +563,12 @@
       <div class="card-body">
         <h3 class="card-name">${product.name}</h3>
         <p class="card-desc">${product.description}</p>
+        ${stockNote(product) ? `<p class="card-stock${isSoldOut(product) ? " is-soldout" : ""}">${stockNote(product)}</p>` : ""}
         <div class="card-bottom">
-          <span class="card-price">${formatPrice(product.price)}</span>
+          ${priceHtml(product)}
           <div class="card-actions">
-            <button type="button" class="btn-add" data-id="${product.id}" aria-label="Agregar ${product.name} al carrito">
-              ${UI_ICONS.bagPlus}<span>Agregar</span>
+            <button type="button" class="btn-add" data-id="${product.id}" aria-label="Agregar ${product.name} al carrito"${isSoldOut(product) ? " disabled" : ""}>
+              ${UI_ICONS.bagPlus}<span>${isSoldOut(product) ? "Sin stock" : "Agregar"}</span>
             </button>
             <a class="btn-wa-icon" href="${whatsappLink(product)}" target="_blank" rel="noopener"
                aria-label="Consultar ${product.name} por WhatsApp" title="Consultar por WhatsApp">
@@ -636,8 +663,10 @@
   // (los dijes nunca entran acá: solo se aceptan ids de PRODUCTS)
   // --------------------------------------------------------
   function addToCart(productId) {
-    if (!PRODUCTS.some((p) => p.id === productId)) return;
-    cart[productId] = (cart[productId] || 0) + 1;
+    const product = PRODUCTS.find((p) => p.id === productId);
+    if (!product || isSoldOut(product)) return;
+    const current = cart[productId] || 0;
+    cart[productId] = hasStockLimit(product) ? Math.min(current + 1, product.stock) : current + 1;
     saveCartToStorage();
     renderCart();
     bumpCartCount();
@@ -645,7 +674,9 @@
   }
 
   function changeQty(productId, delta) {
-    const next = (cart[productId] || 0) + delta;
+    const product = PRODUCTS.find((p) => p.id === productId);
+    let next = (cart[productId] || 0) + delta;
+    if (product && hasStockLimit(product)) next = Math.min(next, product.stock);
     if (next <= 0) {
       delete cart[productId];
     } else {
@@ -763,7 +794,7 @@
             <div class="cart-item-qty">
               <button type="button" class="qty-btn" data-action="minus" aria-label="Quitar uno">−</button>
               <span aria-live="polite">${qty}</span>
-              <button type="button" class="qty-btn" data-action="plus" aria-label="Agregar uno">+</button>
+              <button type="button" class="qty-btn" data-action="plus" aria-label="Agregar uno"${hasStockLimit(product) && qty >= product.stock ? " disabled" : ""}>+</button>
             </div>
             <span class="cart-item-subtotal">${formatPrice(product.price * qty)}</span>
           </div>

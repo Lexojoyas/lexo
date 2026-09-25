@@ -1026,6 +1026,73 @@ button {
   color: var(--color-gold-bright);
 }
 
+.card-price-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+}
+
+.card-price-old {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-ink-mute);
+  text-decoration-thickness: 1.5px;
+}
+
+/* Aviso de stock ("Queda una sola", "Sin stock") */
+.card-stock {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  align-self: flex-start;
+  margin: 8px 0 0;
+  padding: 3px 10px 3px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 138, 92, 0.45);
+  background: rgba(255, 138, 92, 0.1);
+  color: #ffb08f;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.card-stock::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff8a5c;
+}
+
+.card-stock.is-soldout {
+  border-color: rgba(183, 169, 142, 0.35);
+  background: rgba(183, 169, 142, 0.08);
+  color: var(--color-ink-soft);
+}
+
+.card-stock.is-soldout::before {
+  background: var(--color-ink-mute);
+}
+
+.btn-add:disabled,
+.qty-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .card-actions {
   display: flex;
   align-items: center;
