@@ -273,6 +273,15 @@ const PRODUCTS = [
     image: "images/paris-fina.jpg",
   },
   {
+    id: "rosario-fino",
+    name: "Rosario fino",
+    category: "Cadenas",
+    price: 35000,
+    oldPrice: 38000,
+    description: "Rosario de bolitas con medalla de San Benito y cruz.",
+    image: "images/rosario-fino.jpg",
+  },
+  {
     id: "tourbillon-fina",
     name: "Tourbillon fina",
     category: "Cadenas",
